@@ -1,0 +1,15 @@
+// const fs = require("fs");
+// console.log("fs", fs)
+
+const { readFileSync, writeFileSync } = require("fs");
+
+const first = readFileSync("./content/first.txt", "utf-8");
+const second = readFileSync("./content/second.txt", "utf-8");
+
+// console.log(first, second);
+
+writeFileSync(
+  "./content/result-sync.txt",
+  `Here is the result: ${first}, ${second}`,
+  { flag: "a" } //this will append the file means: It will not override the text, the new text wilol be add on.
+);
